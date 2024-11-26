@@ -1,10 +1,10 @@
 import Container from "@/components/Container";
 
-export default function Home() {
+export default function Page() {
     return (
         <main>
             <Container>
-                <h1>Welcome - Homepage</h1>
+                <h1>Produtos</h1>
             </Container>
         </main>
     );
