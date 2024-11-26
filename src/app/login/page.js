@@ -16,7 +16,8 @@ export default function Login() {
     }
 
     const handleLogin = async (role) => {
-        await login(role, username);
+        const user = username === '' ? 'Usuário' : username;
+        await login(role, user);
     }
 
     return (

@@ -14,7 +14,8 @@ export default function Register() {
     const handlesubmit = async (e) => {
         e.preventDefault();
 
-        await login('user', username);
+        const user = username === '' ? 'Usuário' : username;
+        await login('user', user);
     }
 
     return (
