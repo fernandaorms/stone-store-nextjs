@@ -4,12 +4,6 @@ import Header from '@/components/Header';
 import Container from '@/components/Container';
 
 export default function Page() {
-    const { loading } = useUser();
-
-    if (loading) {
-        return <div>Carregando...</div>; // Pode exibir um spinner ou mensagem de carregamento
-    }
-
     return (
         <div>
             <Header />
