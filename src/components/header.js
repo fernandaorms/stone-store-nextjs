@@ -15,7 +15,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <header className='bg-white'>
+        <header className='bg-white py-4 mb-12 border-b-2 border-gray-200'>
             <Container>
                 <nav className='flex items-center justify-between'>
                     <div className='logo'>
@@ -27,14 +27,14 @@ export default function Header() {
                     </div>
 
                     <div className='flex items-center gap-4'>
-                        <Link href='produtos'>Produtos</Link>
+                        <Link href='produtos' className='font-semibold'>Produtos</Link>
 
                         {(auth.loggedIn && auth.role == 'admin') && (
-                            <Link href='dash'>Dashboard</Link>
+                            <Link href='dash' className='font-semibold'>Dashboard</Link>
                         )}
                     </div>
 
-                    <div className='flex items-center gap-4'>
+                    <div className='flex items-center gap-2'>
                         {auth.loggedIn ? (
                             <>
                                 <div>
@@ -42,19 +42,19 @@ export default function Header() {
                                     <span className='font-semibold'>{auth.username}</span>
                                 </div>
 
-                                <button onClick={logout} className='h-9 w-9 border-2 border-red-500 text-red-500 rounded flex items-center justify-center'>
+                                <button onClick={logout} className='px-4 py-4 border-2 border-red-500 text-red-500 rounded'>
                                     <FaArrowRightFromBracket />
                                 </button>
                             </>
                         ) : (
                             <>
-                                <button onClick={() => login('role', 'Usuário')} className='px-4 py-2 mr-2 bg-blue-500 text-white rounded'>
-                                    Login User
-                                </button>
+                                <Link href='login' className='text-sm font-semibold px-4 py-2 rounded border-2 border-blue-500 text-blue-500'>
+                                    Login
+                                </Link>
 
-                                <button onClick={() => login('admin', 'Administrador')} className='px-4 py-2 bg-green-500 text-white rounded'>
-                                    Login Admin
-                                </button>
+                                <Link href='registro' className='text-sm font-semibold px-4 py-2 bg-blue-500 text-white rounded'>
+                                    Criar conta
+                                </Link>
                             </>
                         )}
                     </div>
